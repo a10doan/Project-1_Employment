@@ -49,6 +49,11 @@ collected_data_df = collected_data_df.sort_values(['Year', 'Industry']).reset_in
 collected_data_df_mod = collected_data_df.loc[collected_data_df['Industry Type']=='Private'].reset_index(drop=True)
 #collected_data_df_mod.head()
 
+collected_data_df_mod['Total Wages Collected'] = collected_data_df_mod['Total Wages Collected'].astype("int")
+collected_data_df_mod['Emp Level Month #1'] = collected_data_df_mod['Emp Level Month #1'].astype("int")
+collected_data_df_mod['Emp Level Month #2'] = collected_data_df_mod['Emp Level Month #2'].astype("int")
+collected_data_df_mod['Emp Level Month #3'] = collected_data_df_mod['Emp Level Month #3'].astype("int")
+
 group_year = collected_data_df_mod.groupby(["Year", "Industry"]).mean()
 # group_year.head()
 
